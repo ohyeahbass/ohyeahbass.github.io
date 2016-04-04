@@ -1,0 +1,193 @@
+/***************default settings********************/
+body{font-family: 'Lato', sans-serif;}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{font-family: 'Lato', sans-serif;}
+p{ color:#888;}
+a{color:#e80017;}
+a:focus{ outline:none;}
+
+/***************theme btns********************/
+.main-btn{ background:#e80017; border-color:#aa0011; color:#fff;}
+.main-btn:hover{ background:#aa0011;color:#fff;}
+.line-btn{ background:none; color:#fff;border-color:#fff;}
+.line-btn:hover{ color:#eee;}
+.dark-btn{ background:none; color:#363636;border-color:#363636;}
+.dark-btn:hover{ color:#111;}
+.yellow-btn{ background:none; color:#ff9c00;border-color:#ff9c00;}
+.yellow-btn:hover{ color:#ff9c00;}
+.red-btn{ background:none; color:#e80017;border-color:#e80017;}
+.red-btn:hover{ color:#e80017;}
+
+/***************fix cantainer*******************
+.container{ width:970px;}*/
+
+/***************Parallax settings********************/
+.bgParallax {color:#FFF;margin: 0 auto;text-align:center;width: 100%;max-width: 1920px;position: relative;min-height: 100%;background-position: 50% 0;
+background-repeat: repeat;background-attachment: fixed;}
+.color-overlay {
+background: rgba(199, 4, 8, 0.6);
+position: relative;
+z-index: 0;
+}
+.color-overlay.white {
+background: rgba(255, 255, 255, 0.6);
+position: relative;
+z-index: 0;
+}
+/***************forms inputs********************/
+.form-control{ box-shadow:none; border-color:#aa0011; height:49px;}
+.form-control:focus{ box-shadow:none; border-color:#e80017;outline:none;}
+input:focus,selectl:focus{ box-shadow:none; border-color:#e80017; outline:none;}
+.form-control-feedback{ line-height:50px;}
+
+
+/***************Back to top btn********************/
+.back-to-top {position: fixed;bottom: 15px;right: 10px;text-decoration: none;color: #fff;background-color:#e80017;font-size: 18px;padding:0.25em 0.5em;display: none;}
+.back-to-top:hover {background:#363636;color:#fff;}
+
+/***************navbar********************/
+.navbar-brand{ padding:15px 15px; height:60px; }
+.navbar-brand img{ height:36px; width:auto;}
+.navbar.navbar-default{ background-image: -moz-linear-gradient(top, #000000 30%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0));
+      background-image: -webkit-linear-gradient(top, #000000 30%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0));
+      background-image: linear-gradient(to bottom, #000000 30%, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0)); border:none; margin:0px;}
+.main-menu{min-height: 90px; background:none; border:none;transition: background .5s ease-in-out; -moz-transition: background .5s ease-in-out; -webkit-transition: background .5s ease-in-out;}
+.main-menu.floating-menu .navbar-nav > li > a:hover, .main-menu.floating-menu .navbar-nav > li > a:focus{background:none; color:#fff;}
+.navbar-default .navbar-nav > li > a{ color:#888; font-size:16px; font-weight:300; padding-top:20px; padding-bottom:20px;}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{ background:none; color:#fff;}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{background:none; color:#fff;}
+
+.main-menu.floating-menu{background:#363636;min-height: 60px;}
+.main-menu.floating-menu .navbar-nav > li > a{ color:#e80017;}
+.main-menu.floating-menu .navbar-nav > .active > a, .main-menu.floating-menu .navbar-nav > .active > a:hover, .main-menu.floating-menu .navbar-nav > .active > a:focus{ background:none; color:#fff;}
+
+/***************slider********************/
+#banner{ background-image:url(../images/slider/slider1.jpg); background-position:center center; background-size:cover; background-repeat:repeat; min-height:645px; width:100%;}
+.caption h3{font-family: 'Lobster', cursive; color:#e80017; font-size:50px; font-weight:400;}
+.caption p{ color:#e80017; font-size:34px; font-weight:500;}
+.caption{background-color: rgba(255, 248, 239, 0.8); margin-top:150px;border: 2px solid rgba(255, 255, 255, 0.4); padding:35px;}
+.caption .line-btn{ border-color:#363636; color:#363636;}
+/******************section default**********************/
+section h2.heading{font-size:42px; color:#333333; font-family: 'Lobster', cursive; font-weight:400; line-height:36px; margin-bottom:5px;}
+section h3.helping-text{ font-size:20px; color:#888; font-weight:300; margin:0px 0px 30px 0px;line-height:36px;}
+section p{ font-size:18px;color:#888;}
+section{ padding:50px 0px; text-align:center;}
+
+/**************************services*********************************/
+#services{ background:#f8f8f8; border-top:1px solid #eee;}
+.service-box{ text-align:center;}
+.service-box .service-icon{ color:#e80017; font-size:36px;  text-align:center; line-height:95px; display:block; margin:0px auto;}
+.service-box .service-icon [class^="flaticon-"]:before{ margin:0px; font-size:75px;line-height:75px;}
+.service-box h3{font-size:32px; color:#333333; font-weight:700; line-height:36px; margin-bottom:15px;}
+.service-box p{ font-size:14px;}
+
+/**************************Parallax*********************************/
+#parallax-1{ padding:0px 0px;background-image: url(../images/parallax-2.jpg); background-size:cover; background-position:center center;}
+#parallax-1 .container{padding:50px 0px;}
+#parallax-2 .container{padding:50px 0px;}
+#parallax-2{ padding:0px 0px;background-image: url(../images/perallax.jpg);background-size:cover; background-position:center center;}
+.bgParallax h2.heading{ color:#e80017;margin-bottom:25px;font-family: 'Lobster', cursive; font-weight:400;}
+
+
+/****************about*******************/
+.timing h3{ margin:0px 0px 15px 0px;font-family: 'Lobster', cursive;color:#e80017; line-height:24px;font-weight:400; }
+.timing h3 i{color:#e80017;}
+.timing li{ font-size:16px; line-height:28px; display:block;}
+.timing li strong{ width:100px; display:inline-block;}
+/**************************Portfolio*********************************/
+.portfolio-grid .thumbnail{ border-radius:0px;border:none; padding:0px; height:280px; overflow:hidden;}
+.portfolio-grid .thumbnail img{ min-height:280px; height:auto; width:100%; border:none;border-radius:0px; padding:0px;}
+.drop-panel{ padding:0px !important;}
+.portfolio-grid .hide-none{ display:none; height:280px !important; background:none repeat scroll 0 0 rgba(194, 27, 1, 0.7);}
+.portfolio-grid .hover-text{ text-align:center; padding-top:95px;}
+.portfolio-grid .hover-text h5{font-size:36px; color:#fff; font-weight:700; line-height:36px; margin-bottom:0px;}
+.portfolio-grid .hover-text p{font-size:20px; color:#fff; font-weight:300; line-height:36px;}
+.portfolio-grid .hover-text a{font-size:36px; color:#fff;}
+
+/**************************Team*********************************/
+#team{ background:#f8f8f8; border-top:1px solid #eee;}
+.members-grid{ margin-top:50px;}
+.members-grid .thumbnail{ border:none; padding:0px; border-radius:0px; margin-bottom:0px;
+}
+.members-grid .thumbnail img{ height:345px; border:none; padding:0px;border-radius:0px;}
+.drop-panel{ padding:0px !important;}
+.members-grid .hide-none{ display:none; height:345px !important; background:none repeat scroll 0 0 rgba(194, 27, 1, 0.7);}
+.members-grid .hover-text{ text-align:center; padding-top:145px;}
+.members-grid .caption{ margin-top:0px; background:none;padding:0px;}
+.members-grid .caption h3{font-size:32px; color:#333; font-weight:700; line-height:36px; margin-bottom:10px;}
+.members-grid .caption p{font-size:14px; color:#888; font-weight:300;}
+
+/**************************social icons*********************************/
+.social li a{ text-indent:-9999px; height:61px; width:61px; display:block;background-image: url(../images/white-social-icon.png); background-repeat:no-repeat; }
+.social li a.fb{background-position:left top; }
+.social li a.dr{background-position:right top; }
+.social li a:hover{ opacity:0.8;}
+
+
+.social.social-gray li a{background-image: url(../images/gray-social-icon.png);height:40px; width:44px;}
+.social.social-gray li a.fb{background-position:left top; }
+.social.social-gray li a.twt{background-position:-58px top; }
+.social.social-gray li a.dr{background-position:-116px top; }
+.social.social-gray li a.be{background-position:right top; }
+
+/**************************contact*********************************/
+#order{background-image: url(../images/contact-bg.jpg); background-size:cover; background-position:center center;}
+.contact-form .textarea{ min-height:220px; resize:none;}
+.contact-info{text-align:left;}
+.contact-info h4{ margin-top:0px;  font-size:18px; color:#333;font-weight:700;}
+.contact-info a{color:#888;}
+.contact-info address{color:#888;}
+.form-date input[data-date="day"], .form-date input[data-date="hour"], .form-date input[data-date="minute"] {
+width: 49px;box-shadow: none;
+height: 49px;padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+color: #555;
+background-color: #fff;
+border: 1px solid #aa0011;
+border-radius: 4px; display:inline-block;
+}
+.form-date input[data-date="year"], .form-date select{
+box-shadow: none;
+height: 49px;padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+color: #555;
+background-color: #fff;
+border: 1px solid #aa0011;
+border-radius: 4px; display:inline-block;
+}
+/**************************footer*********************************/
+footer{ padding:14px 0px; background:#333; width:100%; float:left;}
+footer .design-by{ font-size:13px; color:#888; text-align:right;}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (max-width: 768px) {
+	.members-grid .thumbnail{ background:none;}
+  .portfolio-grid .thumbnail img{ height:280px;}
+  .portfolio-grid .hide-none{height:280px !important;}
+  .portfolio-grid .hover-text{padding-top:70px;}
+  .portfolio-grid .hover-text h5{ font-size:28px;line-height:30px;}
+  .portfolio-grid .hover-text p{ font-size:18px;line-height:24px;}
+}
+@media (max-width: 480px) {
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+max-height: 500px;
+}
+.form-date input[data-date="year"], .form-date select{ width:100px;}
+.navbar-toggle{ padding:15px 10px;}
+.navbar-default{ background:#363636; min-height:60px;}	
+.navbar-default .navbar-toggle{border:none;}
+.navbar-default .navbar-toggle .icon-bar{ background-color:#fff; }
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{ background:none;}
+.carousel-inner .item .carousel-caption h3{ font-size:36px;}
+.carousel-inner .item{ min-height:500px;}
+.bgParallax h2.heading{ font-size:20px;}
+}
+@media (max-width: 340px) {
+	.carousel-inner .item .carousel-caption h3{ font-size:24px;}
+	.carousel-inner .item{ min-height:480px;}
+}
