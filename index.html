@@ -2,207 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-      <script
-  src="https://code.jquery.com/jquery-2.2.4.js"
-  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AMA (American Heart Association) BLS, CPR, and First Aid; serving all Pocatello, Blackfoot, and Idaho Falls" />
+    <title>CPR of Pocatello - AMA BLS, CPR, and First Aid; serving all Pocatello, Blackfoot, and Idaho Falls </title>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
   <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-  <style>
-      h3 {
-              position: absolute;
-    top: 14px;
-    font-size: 28px;
-    right: 14px;
-    color: #ffffff;
-      }
-      h4 {
-          position: absolute;
-    top: 53px;
-    font-size: 16px;
-    right: 13px;
-    color:#000
-      }
-      h6 {
-              position: absolute;
-    top: 140px;
-    font-size: 26px;
-    right: 14px;
-    color: #ffffff
-      }
-      h5 {
-              position: absolute;
-    top: 183px;
-    font-size: 19px;
-    right: 12px;
-    color: #df973d
-      }
-      .carousel .carousel-item {
-          width: 400px !important;
-      }
-      div#backOfCard,
-      div#frontOfCard {
-        border: 5px dashed #CCC;
-        width:276px;
-        font-family:Verdana;
-    }
-    div#backOfCard,
-    div#frontOfCard  {
-        height:50px;
-        text-align:center;
-    }
-    div#backOfCard,
-    div#frontOfCard {
-        height:200px;
-        line-height: 50px;
-        position: relative
-    }
-    div#backOfCard li,
-    div#frontOfCard li {
-        list-style: none;
-    }
-    div#bacOfCard li img
-    div#frontOfCard li img {
-        width: 276px
-    }
-    #dropCards {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
-    #safety-line1 {
-        border: blue solid 1px;
-        width: 244px;
-        height: 137px;
-        position: absolute;
-        top: 22px;
-        left: 12px;
-    }
-    #cut-line1 {
-        border: red solid 1px;
-        width: 252px;
-        height: 144px;
-        position: absolute;
-        top: 18px;
-        left: 8px;
-    }
-    #fileList img, #fileList2 img {
-        width: 100%;
-    }
-  </style>
-</head>
-<body ng-app="app">
-    <div ng-controller="businessCardController">
-        <div class="carousel">
-        <a class="carousel-item" href="#one!">
-            <img src="sushi.png">
-            <h3>{{businessCardInformation.name}}</h3>
-            <h4>HEAD SUSHI CHEF</h4>
-            <h6>{{businessCardInformation.phone}}</h6>
-            <h5>{{businessCardInformation.email}}</h5>
-        </a>
-        <a class="carousel-item" href="#two!"><img src="http://lorempixel.com/250/250/nature/2"></a>
-        <a class="carousel-item" href="#three!"><img src="http://lorempixel.com/250/250/nature/3"></a>
-        <a class="carousel-item" href="#four!"><img src="http://lorempixel.com/250/250/nature/4"></a>
-        <a class="carousel-item" href="#five!"><img src="http://lorempixel.com/250/250/nature/5"></a>
-    </div>
-    <div>
-        
-        <input placeholder="name"type="text" ng-model="businessCard.name">
-        <input placeholder="job" type="text" ng-model="businessCard.job">
-        <input placeholder="email" type="text" ng-model="businessCard.email">
-        <input placeholder="company name" type="text" ng-model="businessCard.companyName">
-        <input placeholder="other one" type="text" ng-model="businessCard.otherOne">
-        <input placeholder="phone" type="text" ng-model="businessCard.phone">
-        <input placeholder="address" type="text" ng-model="businessCard.addressLineOne">
-        <input placeholder="address" type="text" ng-model="businessCard.addressLineTwo">
-        <input placeholder="state" type="text" ng-model="businessCard.addressLineState">
-        <input type="submit"ng-click="businessCardInfo(businessCard)">
-    </div>
-  </div>
-  <h2>Drop card in box</h2>
-    <div id="dropCards">
-        <div id="frontOfCard">
-            <span id="cut-line1"></span>
-            <span id="safety-line1"></span>
-            <ul id="fileList"></ul>
-        </div>
-        <div id="backOfCard">
-            <span id="cut-line2"></span>
-            <span id="safety-line2"></span>
-            <ul id="fileList2"></ul>
-        </div>
-    </div>
-    <input type="submit" onclick="imageToCanvas()"id="capture_div">
-    <div id="canvasImg"></div>
-  <script>
-$('#frontOfCard').on({
-    'dragover dragenter': function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-    },
-    'drop': function(e) {
-         console.log(e);
-        var dataTransfer =  e.originalEvent.dataTransfer;
-        if( dataTransfer && dataTransfer.files.length) {
-            e.preventDefault();
-            e.stopPropagation();
-            // document.getElementById('fileList').innerHTML="<li><img src='" + e.toElement.baseURI + "'></li>"
-            $.each( dataTransfer.files, function(i, file) { 
-              var reader = new FileReader();
-              reader.onload = $.proxy(function(file, $fileList, event) {
-                var img = file.type.match('image.*') ? "<img id='canvasImageOne' src='" + event.target.result + "' /> " : "";
-                $fileList.prepend( $("<li>").append( img ) );
-              }, this, file, $("#fileList"));
-              reader.readAsDataURL(file);
-            });
-        }
-    }
-});
-$('#backOfCard').on({
-    'dragover dragenter': function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-    },
-    'drop': function(e) {
-        console.log(e);
-        var dataTransfer =  e.originalEvent.dataTransfer;
-        if( dataTransfer && dataTransfer.files.length) {
-            e.preventDefault();
-            e.stopPropagation();
-            // document.getElementById('fileList').innerHTML="<li><img src='" + e.toElement.baseURI + "'></li>"
-            $.each( dataTransfer.files, function(i, file) { 
-              var reader = new FileReader();
-              reader.onload = $.proxy(function(file, $fileList, event) {
-                var img = file.type.match('image.*') ? "<img src='" + event.target.result + "' /> " : "";
-                $fileList.prepend( $("<li>").append( img ) );
-              }, this, file, $("#fileList2"));
-              reader.readAsDataURL(file);
-            });
-        }
-    }
-});
-// $('#capture_div').click(function(){
-//     var canvas = document.getElementById("mycanvas");
-//     var img    = canvas.toDataURL("image/png");
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+          
+    <link type='text/css' rel='stylesheet' href='main.css'/>
 
-// }
-var imageToCanvas = function() {
-    var canvas = document.getElementById("mycanvas");
-    var img = canvas.toDataURL("image/png");
-    console.log('hi')
-}
-$(document).ready(function(){
-      $('.carousel').carousel();
-      
-    });
+</head>
+<body>
+    
+      <nav >
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo"><img src="/img/logo.png" alt="CPR of Pocatello"></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="#hpt_section">TRAINING</a></li>
+            <li><a href="#price_section">CLASSES/PRICES</a></li>
+            <li><a href="#contact_and_video">CONTACT US</a></li>
+          </ul>
+        </div>
+      </nav>
+    <section id="jumbotron_section" >
+      <img src="/img/CPR2.png" alt="Man doing CPR">
+      <!--<iframe width="854" height="480" src="https://www.youtube.com/embed/vq3JhWw5WpA?autoplay=1" frameborder="0" allowfullscreen ></iframe>-->
+      <div id="homepage_headings">
+        <h1>CPR OF POCATELLO</h1>
+        <h3>NEW - Updated with 2015 AHA Guidelines for CPR & ECC.</h3>
+        <h4>100% classroom training means students are with an AHA instructor for their entire learning experience.</h4>
+      </div>
+    </section>
+    <section id="hpt_section">
+      <div>
+        <h3>BLS - Instructor-Led Training</h3>
+        <p>The BLS Instructor-led course teaches both single-rescuer and team basic life support skills for application in both prehospital and in-facility environments, with a focus on High-Quality CPR and team dynamics. </p>
+        <p>This course trains participants to promptly recognize several life-threatening emergencies, give high-quality chest compressions, deliver appropriate ventilations and provide early use of an AED.</p>
+        <p>In the Instructor-led course, students participate in simulated clinical scenarios and learning stations. Students work with an AHA BLS Instructor to complete BLS skills practice and skills testing. Students also complete a written exam. </p>
+        <p>This course is recommended and accepted by almost all medical facilities and professionals as the standard for Healthcare Providers. It includes training in CPR, use of an AED, and airway obstruction removal for adults, children, and infants. This course is geared for healthcare settings.</p>
+      </div>
+      <div>
+        <img src="/img/first-aid-860226_1280.jpg" alt="man doing heimlich">
+      </div>
+    </section>
+    <section id="price_section">
+      <div>
+        <img src="/img/first-aid-850489_1280.jpg" alt="man doing cpr">
+      </div>
+      <div>
+        <h2>CLASSES OFFERED</h2>
+        <h5>Click to see more info</h5>
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header">Heartsaver® First Aid *<span class="float_right">$45.00</span></div>
+            <div class="collapsible-body"><span>Designed to meet OSHA regulations, this course covers first aid basics, consisting of the most common life-threatening emergencies, how to recognize them, how to call for help, and how to perform lifesaving skills.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Heartsaver® CPR AED *<span class="float_right">$40.00</span></div>
+            <div class="collapsible-body"><span>This course will teach you to recognize cardiac arrest, get emergency care on the way quickly, and help a person until more advanced care arrives to take over. The course also covers adult choking and naloxone.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">Heartsaver® First Aid CPR & AED *<span class="float_right">$65.00</span></div>
+            <div class="collapsible-body"><span>This course is designed to meet OSHA requirements and covers first aid basics and CPR and AED skills for adults, children, and infants.</span></div>
+          </li>
+          <li>
+            <div class="collapsible-header">HeartCode® BLS<span class="float_right">$25.00</span></div>
+            <div class="collapsible-body"><span>Through a variety of eLearning assets such as dramatizations, eSimulations, animations, self-directed learning, and interactive activities, this course teaches students BLS knowledge and skills. After completing the online portion, students attend a structured BLS Hands-On Session with an AHA Instructor. This session focuses on meaningful skills practice, debriefing, team scenarios, discussions of local protocols, and skills testing. Where available, students may also complete the hands-on session with a voice-assisted manikin (VAM). HeartCode BLS is for healthcare professionals seeking an alternative method for completing an initial or renewal BLS Course.<br><strong>Get started below.</strong></span></div>
+          </li>
+        </ul>
+        <p>* Books Included With Course</p>
+     </div>
+    </section>
+    <section id="contact_and_video">
+      <div id="form_container">
+        <h4>Contact Us</h4> <h5>Phone: 208-244-2417 <br> Email:</h5>
+        <form class="col s12" name="signup" method="post">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="first_name" type="text" class="validate">
+              <label for="first_name">First Name</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="last_name" type="text" class="validate">
+              <label for="last_name">Last Name</label>
+            </div>
+         
+         
+            <div class="input-field col s12">
+              <input   type="text" class="validate">
+              <label for="disabled">Email</label>
+            </div>
+          
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate">
+              <label for="email">Comment</label>
+            </div>
+          </div>
+          <input type="submit">
+        </form>
         
-  </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
-   
-    <script src='script.js'></script>
+      </div>
+      <div id="form_container_video">
+        <iframe width="854" height="480" src="https://www.youtube.com/embed/1dwnRDPT0Xo" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+    <footer class="page-footer">
+        <span>CPR Of Pocatello</span>
+        <span>cprofpocatello@gmail.com</span>
+        <span>208-244-2417</span>
+    </footer>
 </body>
 </html>
